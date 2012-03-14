@@ -2,33 +2,29 @@
 <html> 
   <head> 
     <title>Skeleton</title> 
-      <meta name="viewport" content="width=device-width, initial-scale=1"> 
-      <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
-      <link rel="stylesheet" href="stylesheets/skeleton.css" />
-      <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-      <script type="text/javascript" src="scripts/skeleton.js"></script>
-<!-- <script type="text/javascript"> -->
-<!-- $(document).bind("mobileinit", function() { -->
-<!--       $.mobile.page.prototype.options.addBackBtn = true; -->
-<!--  });     -->
-<!-- </script>   -->
-      <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
-  </head> 
-  <body> 
-    <div data-role="page" id="main">
-      <div data-role="header" data-position="fixed" data-id="header" class="menu">
-	<style type="text/css">	
-		.menu .ui-btn .ui-btn-inner { padding-top: 40px !important; }
-		.menu .ui-btn .ui-icon { width: 30px!important; height: 30px!important; margin-left: -15px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: none !important; border-radius: none !important; }
-		#careerbutton .ui-icon { background:  url(images/glyphish-icons/154-necktie.png) 50% 50% no-repeat; background-size: 8px 27px; }
-		#searchbutton .ui-icon { background:  url(images/glyphish-icons/06-magnify.png) 50% 50% no-repeat; background-size: 24px 24px;  }
-		#helpbutton .ui-icon { background:  url(images/glyphish-icons/90-life-buoy.png) 50% 50% no-repeat;  background-size: 24px 24px; }
-		#morebutton .ui-icon { background:  url(images/glyphish-icons/33-cabinet.png) 50% 50% no-repeat;  background-size: 20px 26px; }
-		#graphbutton .ui-icon { background:  url(images/glyphish-icons/55-network.png) 50% 50% no-repeat;  background-size: 24px 24px; }
-		#recsbutton .ui-icon { background:  url(images/glyphish-icons/169-8ball.png) 50% 50% no-repeat;  background-size: 24px 24px; }
-		#filterbutton .ui-icon { background:  url(images/glyphish-icons/13-target.png) 50% 50% no-repeat;  background-size: 28px 28px; }
-	</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
 
+    <!-- CSS STYLESHEETS -->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+    <link rel="stylesheet" href="stylesheets/menu.css" />
+    <link rel="stylesheet" href="stylesheets/skeleton.css" />
+
+    <!-- JAVASCRIPT -->
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="scripts/arbor-v0.92/lib/arbor.js"></script>
+    <script src="scripts/graph.js"></script>
+    <script src="scripts/skeleton.js"></script>
+    <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+  </head> 
+
+  <body> 
+
+    <!-- MAIN PAGE -->
+    <div data-role="page" id="main">
+
+      <!-- MAIN PAGE HEADER -->
+      <div data-role="header" data-position="fixed" data-id="header" class="menu">
+	<!-- MAIN PAGE NAVBARS -->
         <div data-role="navbar" class="menu">
 	  <ul id="mainmenu">
 	    <li><a href="#" id="careerbutton" class="mainlevel1"
@@ -40,6 +36,8 @@
 	    <li><a href="#" id="morebutton" class="mainlevel1"
 		   data-icon="custom" data-theme="d">More</a></li>
 	  </ul>
+	</div> <!-- /navbar -->
+	<div data-role="navbar" class="menu">
 	  <ul id="moremenu">
 	    <li><a href="#" id="graphbutton" data-icon="custom" data-theme="c">Graph</a></li>
 	    <li><a href="#" id="recsbutton" data-icon="custom" data-theme="c">Recs</a></li>
@@ -47,10 +45,13 @@
 	  </ul>
 	</div> <!-- /navbar -->
       </div> <!-- /header -->
+
+      <!-- MAIN PAGE CONTENT -->
       <div data-role="content">
-	<img src="images/fake.png">
+	<canvas id="graph" width="320" height="480"></canvas>
       </div> <!-- /content -->
 
+      <!-- MAIN PAGE FOOTER -->
       <div data-role="footer" data-id="footer" data-position="fixed">
         <div data-role="navbar" class="menu">
 	  <ul id="footermenu">
@@ -60,5 +61,6 @@
 	</div>
       </div> <!-- /footer -->
     </div> <!-- /page -->
+
   </body>
 </html>

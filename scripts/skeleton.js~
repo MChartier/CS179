@@ -10,7 +10,7 @@ function hideMore() {
 $("#main").live('pagecreate', function(event) {
   $("#moremenu").hide();
 
-  //$("#mainmenu").children().children().not("#morebutton").click(hideMore);
+  $(".mainlevel1").not("#morebutton").click(hideMore);
 
   $("#morebutton").click(openMore);
 });

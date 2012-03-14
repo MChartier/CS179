@@ -1,0 +1,14 @@
+.menu .ui-btn .ui-btn-inner 
+{ 
+  padding-top: 40px !important; 
+}
+
+.menu .ui-btn .ui-icon 
+{ width: 30px!important; height: 30px!important; margin-left: -15px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: none !important; border-radius: none !important; }
+#careerbutton .ui-icon { background:  url(images/glyphish-icons/154-necktie.png) 50% 50% no-repeat; background-size: 8px 27px; }
+#searchbutton .ui-icon { background:  url(images/glyphish-icons/06-magnify.png) 50% 50% no-repeat; background-size: 24px 24px;  }
+#helpbutton .ui-icon { background:  url(images/glyphish-icons/90-life-buoy.png) 50% 50% no-repeat;  background-size: 24px 24px; }
+#morebutton .ui-icon { background:  url(images/glyphish-icons/33-cabinet.png) 50% 50% no-repeat;  background-size: 20px 26px; }
+#graphbutton .ui-icon { background:  url(images/glyphish-icons/55-network.png) 50% 50% no-repeat;  background-size: 24px 24px; }
+#recsbutton .ui-icon { background:  url(images/glyphish-icons/169-8ball.png) 50% 50% no-repeat;  background-size: 24px 24px; }
+#filterbutton .ui-icon { background:  url(images/glyphish-icons/13-target.png) 50% 50% no-repeat;  background-size: 28px 28px; }
