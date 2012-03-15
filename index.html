@@ -12,8 +12,8 @@
     <!-- JAVASCRIPT -->
     <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="scripts/arbor-v0.92/lib/arbor.js"></script>
-    <script src="scripts/graph.js"></script>
     <script src="scripts/skeleton.js"></script>
+    <script src="scripts/graph.js"></script>
     <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
   </head> 
 
@@ -23,9 +23,9 @@
     <div data-role="page" id="main">
 
       <!-- MAIN PAGE HEADER -->
-      <div data-role="header" data-position="fixed" data-id="header" class="menu">
+      <div data-role="header" data-id="header" class="menu" id="header">
 	<!-- MAIN PAGE NAVBARS -->
-        <div data-role="navbar" class="menu">
+        <div data-role="navbar" class="menu" id="menubar">
 	  <ul id="mainmenu">
 	    <li><a href="#" id="careerbutton" class="mainlevel1"
 		   data-icon="custom" data-theme="d">Career</a></li>
@@ -47,12 +47,12 @@
       </div> <!-- /header -->
 
       <!-- MAIN PAGE CONTENT -->
-      <div data-role="content">
-	<canvas id="graph" width="320" height="480"></canvas>
+      <div data-role="content" id="content">
+	<!--<canvas id="graph" width="360" height="420"></canvas>-->
       </div> <!-- /content -->
 
       <!-- MAIN PAGE FOOTER -->
-      <div data-role="footer" data-id="footer" data-position="fixed">
+      <div data-role="footer" data-id="footer">
         <div data-role="navbar" class="menu">
 	  <ul id="footermenu">
 	    <li><a href="#" id="contentbutton" data-icon="custom" data-theme="c"></a></li>

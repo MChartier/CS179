@@ -1,7 +1,7 @@
 function Renderer(canvas) {
-  var canvas = $(canvas).get(0)
+  var canvas = $(canvas).get(0);
   var ctx = canvas.getContext("2d");
-  var particleSystem
+  var particleSystem;
 
   var that = {
     init:function(system){
@@ -109,7 +109,6 @@ function Renderer(canvas) {
       
       // start listening
       $(canvas).mousedown(handler.clicked);
-
     },
     
   }
@@ -117,7 +116,13 @@ function Renderer(canvas) {
 }
 
 $(document).ready(function() {
-  alert('hi');
+  var canvas = $("<canvas/>", {
+     id: "graph"
+   }).appendTo("#content");
+
+  canvas.attr("width", window.innerWidth);
+  canvas.attr("height", window.innerHeight - 111); // TODO - FIX HACK
+
   var sys = arbor.ParticleSystem(1000, 600, 0.5);
   sys.parameters({gravity:true});
   sys.renderer = Renderer("#graph");
