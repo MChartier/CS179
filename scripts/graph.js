@@ -118,12 +118,12 @@ function Renderer(canvas) {
 $(document).ready(function() {
   var canvas = $("<canvas/>", {
      id: "graph"
-   }).appendTo("#content");
+   }).appendTo("#maincontent");
 
   canvas.attr("width", window.innerWidth);
   canvas.attr("height", window.innerHeight - 111); // TODO - FIX HACK
 
-  var sys = arbor.ParticleSystem(1000, 600, 0.5);
+  var sys = arbor.ParticleSystem(200, 600, 0.5);
   sys.parameters({gravity:true});
   sys.renderer = Renderer("#graph");
   sys.addEdge('a','b');

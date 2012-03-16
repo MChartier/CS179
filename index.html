@@ -11,10 +11,11 @@
 
     <!-- JAVASCRIPT -->
     <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
     <script src="scripts/arbor-v0.92/lib/arbor.js"></script>
     <script src="scripts/skeleton.js"></script>
     <script src="scripts/graph.js"></script>
-    <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+
   </head> 
 
   <body> 
@@ -31,7 +32,7 @@
 		   data-icon="custom" data-theme="d">Career</a></li>
 	    <li><a href="#" id="searchbutton" class="mainlevel1"
 		   data-icon="custom" data-theme="d">Search</a></li>
-	    <li><a href="#" id="helpbutton" class="mainlevel1"
+	    <li><a href="#help" id="helpbutton" class="mainlevel1"
 		   data-icon="custom" data-theme="d">Help</a></li>
 	    <li><a href="#" id="morebutton" class="mainlevel1"
 		   data-icon="custom" data-theme="d">More</a></li>
@@ -46,13 +47,16 @@
 	</div> <!-- /navbar -->
       </div> <!-- /header -->
 
-      <!-- MAIN PAGE CONTENT -->
+      <!-- PAGE CONTENT -->
       <div data-role="content" id="content">
-	<!--<canvas id="graph" width="360" height="420"></canvas>-->
-      </div> <!-- /content -->
+	<div class="pagecontent" id="maincontent"></div>
+	<div class="pagecontent" id="helpcontent">
+	  Help!
+	</div>
+      </div>
 
       <!-- MAIN PAGE FOOTER -->
-      <div data-role="footer" data-id="footer">
+      <div data-role="footer" data-id="footer" id="footer">
         <div data-role="navbar" class="menu">
 	  <ul id="footermenu">
 	    <li><a href="#" id="contentbutton" data-icon="custom" data-theme="c"></a></li>
@@ -61,6 +65,5 @@
 	</div>
       </div> <!-- /footer -->
     </div> <!-- /page -->
-
   </body>
 </html>
