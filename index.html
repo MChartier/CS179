@@ -20,19 +20,18 @@
 
   <body> 
 
-    <!-- MAIN PAGE -->
+    <!-- MAIN PAGE ------------------------------------------------------------->
     <div data-role="page" id="main">
 
       <!-- MAIN PAGE HEADER -->
       <div data-role="header" data-id="header" class="menu" id="header">
-	<!-- MAIN PAGE NAVBARS -->
         <div data-role="navbar" class="menu" id="menubar">
 	  <ul id="mainmenu">
-	    <li><a href="#" id="careerbutton" class="mainlevel1"
+	    <li><a href="#career" id="careerbutton" class="mainlevel1"
 		   data-icon="custom" data-theme="d">Career</a></li>
 	    <li><a href="#" id="searchbutton" class="mainlevel1"
 		   data-icon="custom" data-theme="d">Search</a></li>
-	    <li><a href="#help" id="helpbutton" class="mainlevel1"
+	    <li><a href="#" id="helpbutton" class="mainlevel1"
 		   data-icon="custom" data-theme="d">Help</a></li>
 	    <li><a href="#" id="morebutton" class="mainlevel1"
 		   data-icon="custom" data-theme="d">More</a></li>
@@ -40,16 +39,22 @@
 	</div> <!-- /navbar -->
 	<div data-role="navbar" class="menu">
 	  <ul id="moremenu">
-	    <li><a href="#" id="graphbutton" data-icon="custom" data-theme="c">Graph</a></li>
-	    <li><a href="#" id="recsbutton" data-icon="custom" data-theme="c">Recs</a></li>
+	    <li><a href="#" id="graphbutton"  data-icon="custom" data-theme="c">Graph</a></li>
+	    <li><a href="#" id="recsbutton"   data-icon="custom" data-theme="c">Recs</a></li>
 	    <li><a href="#" id="filterbutton" data-icon="custom" data-theme="c">Filter</a></li>
 	  </ul>
 	</div> <!-- /navbar -->
+	<div id="searchbar">
+	  <input data-type="search" data-theme="c">
+	</div> <!-- /searchbar -->
       </div> <!-- /header -->
 
-      <!-- PAGE CONTENT -->
+      <!-- MAIN PAGE CONTENT -->
       <div data-role="content" id="content">
-	<div class="pagecontent" id="maincontent"></div>
+	<!-- Main content. Graph canvas goes in here. -->
+	<div class="pagecontent" id="maincontent">
+	</div>
+	<!-- Help content. -->
 	<div class="pagecontent" id="helpcontent">
 	  Help!
 	</div>
@@ -59,8 +64,62 @@
       <div data-role="footer" data-id="footer" id="footer">
         <div data-role="navbar" class="menu">
 	  <ul id="footermenu">
-	    <li><a href="#" id="contentbutton" data-icon="custom" data-theme="c"></a></li>
-	    <li><a href="#" id="homebutton" data-icon="custom" data-theme="c"></a></li>
+	    <li><a href="#" class="contentbutton" data-icon="custom" data-theme="c"></a></li>
+	    <li><a href="#" class="homebutton" data-icon="custom" data-theme="c"></a></li>
+	  </ul>
+	</div>
+      </div> <!-- /footer -->
+    </div> <!-- /page -->
+
+    <!-- CAREER PAGE ----------------------------------------------------------->
+    <div data-role="page" id="career">
+      <!-- CAREER PAGE HEADER -->
+      <div data-role="header" data-id="header" class="menu" id="careerheader">
+	<!-- CAREER PAGE NAVBARS -->
+        <div data-role="navbar" class="menu" id="menubar">
+	  <ul id="mainmenu">
+	    <li><a href="#" id="infobutton" class="mainlevel1"
+		   data-icon="custom" data-theme="d">Info</a></li>
+	    <li><a href="#" id="xpbutton" class="mainlevel1"
+		   data-icon="custom" data-theme="d">Work Exp.</a></li>
+	    <li><a href="#" id="favoritesbutton" class="mainlevel1"
+		   data-icon="custom" data-theme="d">Favorites</a></li>
+	    <li><a href="#" id="historybutton" class="mainlevel1"
+		   data-icon="custom" data-theme="d">History</a></li>
+	  </ul>
+	</div> <!-- /navbar -->
+      </div> <!-- /header -->
+
+      <!-- CAREER PAGE CONTENT -->
+      <div data-role="content" id="careercontent">
+	<!-- 'Info' tab -->
+	<div class="careerpagecontent" id="infocontent">
+	  Info stuff.
+	</div>
+
+	<!-- 'Work Experience' tab -->
+	<div class="careerpagecontent" id="XPcontent">
+	  Work experience stuff.
+	</div>
+
+	<!-- 'Favorites' tab -->
+	<div class="careerpagecontent" id="favoritescontent">
+	  Favorites stuff.
+	</div>
+
+	<!-- 'History' tab -->
+	<div class="careerpagecontent" id="historycontent">
+	  History stuff.
+	</div>
+
+      </div> <!-- /content -->
+
+      <!-- CAREER PAGE FOOTER -->
+      <div data-role="footer" data-id="footer" id="careerfooter">
+        <div data-role="navbar" class="menu">
+	  <ul id="footermenu">
+	    <li><a href="#" class="contentbutton" data-icon="custom" data-theme="c"></a></li>
+	    <li><a href="#" class="homebutton" data-icon="custom" data-theme="c"></a></li>
 	  </ul>
 	</div>
       </div> <!-- /footer -->
