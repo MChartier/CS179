@@ -7,3 +7,21 @@
 {
   overflow:auto;
 }
+
+
+/*career page styles*/
+.bottom-left{
+	position:fixed;
+	left:5px;
+	bottom:5px;
+	height:47px;
+	width:47px;
+}
+
+.bottom-right{
+	position:fixed;
+	right:5px;
+	bottom:5px;
+	height:47px;
+	width:47px;
+}

@@ -63,10 +63,10 @@
       <!-- MAIN PAGE FOOTER -->
       <div data-role="footer" data-id="footer" id="footer">
         <div data-role="navbar" class="menu">
-	  <ul id="footermenu">
-	    <li><a href="#" class="contentbutton" data-icon="custom" data-theme="c"></a></li>
-	    <li><a href="#" class="homebutton" data-icon="custom" data-theme="c"></a></li>
-	  </ul>
+	  <div id="footermenu">
+	    <div><a href="#" class="contentbutton bottom-left" data-icon="custom" data-theme="c"></a></div>
+	    <div><a href="#" class="homebutton bottom-right" data-icon="custom" data-theme="c"></a></div>
+	  </div>
 	</div>
       </div> <!-- /footer -->
     </div> <!-- /page -->
@@ -94,7 +94,64 @@
       <div data-role="content" id="careercontent">
 	<!-- 'Info' tab -->
 	<div class="careerpagecontent" id="infocontent">
-	  Info stuff.
+	
+		<form>
+			<div data-role="fieldcontain">
+				<label for="name">Full name</label>
+				<input type="text" name="name" id="name" value="" placeholder="Name"/>
+			</div>
+			
+			<div data-role="fieldcontain">
+				<label for="year">Year</label>
+				<input type="number" name="year" id="year" value="" placeholder="Year"/>
+			</div>
+			
+			<div data-role="fieldcontain">
+				<label for="concentration" class="select">Concentration:</label>
+				<select name="concentration" id="concentration" data-native-menu="false">
+					<option></option>
+					<option value="applied-math">Applied Math</option>
+					<option value="computer-science">Computer Science</option>
+					<option value="biology">Biology</option>
+					<option value="english">English</option>
+				</select>
+			</div> 
+			
+			<div data-role="fieldcontain">
+				<label for="gpa">GPA</label>
+				<input type="number" name="gpa" id="gpa" value="" placeholder="GPA"/>
+			</div>
+			
+		
+			<div data-role="fieldset">
+			<legend>Interests:</legend>
+				<div data-role="fieldcontain">
+					<label for="interest1">1.</label>
+					<select name="interest1" id="interest1" value="">
+						<option></option>
+					</select>
+				</div>
+				
+				<div data-role="fieldcontain">
+					<label for="interest2">2.</label>
+					<select name="interest2" id="interest2" value="">
+						<option></option>
+					</select>
+				</div>
+				
+				<div data-role="fieldcontain">
+					<label for="interest3">3.</label>
+					<select name="interest3" id="interest3" value="">
+						<option></option>
+					</select>
+				</div>
+			</div>
+			
+			<input type="submit" value="Submit" data-icon="check" data-inline="true"/>
+		
+		</form>
+		
+		
 	</div>
 
 	<!-- 'Work Experience' tab -->
@@ -117,10 +174,10 @@
       <!-- CAREER PAGE FOOTER -->
       <div data-role="footer" data-id="footer" id="careerfooter">
         <div data-role="navbar" class="menu">
-	  <ul id="footermenu">
-	    <li><a href="#" class="contentbutton" data-icon="custom" data-theme="c"></a></li>
-	    <li><a href="#" class="homebutton" data-icon="custom" data-theme="c"></a></li>
-	  </ul>
+	  <div id="footermenu">
+	    <div><a  href="#" class="contentbutton bottom-left" data-icon="custom" data-theme="c"></a></div>
+	    <div><a href="#" class="homebutton bottom-right" data-icon="custom" data-theme="c"></a></div>
+	  </div>
 	</div>
       </div> <!-- /footer -->
     </div> <!-- /page -->
