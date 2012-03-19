@@ -121,7 +121,7 @@ $(document).ready(function() {
    }).appendTo("#maincontent");
 
   canvas.attr("width", window.innerWidth);
-  canvas.attr("height", window.innerHeight - 111); // TODO - FIX HACK
+  canvas.attr("height", window.innerHeight - 62); // TODO - FIX HACK
 
   var sys = arbor.ParticleSystem(200, 600, 0.5);
   sys.parameters({gravity:true});
