@@ -36,21 +36,24 @@ index.html contains 'page' divs responsible for displaying the main graph as wel
       <div data-role="header" data-id="header" class="menu" id="header">
         <div data-role="navbar" class="menu" id="menubar">
 	  <ul id="mainmenu">
-	    <li><a href="#career" id="careerbutton" class="mainlevel1"
+	    <li><a href="#career" id="careerbutton" class="menulevel1"
 		   data-icon="custom" data-theme="d">Career</a></li>
-	    <li><a href="#" id="searchbutton" class="mainlevel1"
+	    <li><a href="#" id="searchbutton" class="menulevel1"
 		   data-icon="custom" data-theme="d">Search</a></li>
-	    <li><a href="#" id="helpbutton" class="mainlevel1"
+	    <li><a href="#" id="helpbutton" class="menulevel1"
 		   data-icon="custom" data-theme="d">Help</a></li>
-	    <li><a href="#" id="morebutton" class="mainlevel1"
+	    <li><a href="#" id="morebutton" class="menulevel1"
 		   data-icon="custom" data-theme="d">More</a></li>
 	  </ul>
 	</div> <!-- /navbar -->
 	<div data-role="navbar" class="menu">
 	  <ul id="moremenu">
-	    <li><a href="#" id="graphbutton"  data-icon="custom" data-theme="c">Graph</a></li>
-	    <li><a href="#" id="recsbutton"   data-icon="custom" data-theme="c">Recs</a></li>
-	    <li><a href="#" id="filterbutton" data-icon="custom" data-theme="c">Filter</a></li>
+	    <li><a href="#" id="graphbutton" class="menulevel2"
+		   data-icon="custom" data-theme="c">Graph</a></li>
+	    <li><a href="#" id="recsbutton" class="menulevel2"
+		   data-icon="custom" data-theme="c">Recs</a></li>
+	    <li><a href="#" id="filterbutton" class="menulevel2"
+		   data-icon="custom" data-theme="c">Filter</a></li>
 	  </ul>
 	</div> <!-- /navbar -->
 	<div id="searchbar">
@@ -87,13 +90,13 @@ index.html contains 'page' divs responsible for displaying the main graph as wel
 	<!-- CAREER PAGE NAVBARS -->
         <div data-role="navbar" class="menu" id="menubar">
 	  <ul id="mainmenu">
-	    <li><a href="#" id="infobutton" class="mainlevel1"
+	    <li><a href="#" id="infobutton" class="menulevel1"
 		   data-icon="custom" data-theme="d">Info</a></li>
-	    <li><a href="#" id="xpbutton" class="mainlevel1"
+	    <li><a href="#" id="xpbutton" class="menulevel1"
 		   data-icon="custom" data-theme="d">Work Exp.</a></li>
-	    <li><a href="#" id="favoritesbutton" class="mainlevel1"
+	    <li><a href="#" id="favoritesbutton" class="menulevel1"
 		   data-icon="custom" data-theme="d">Favorites</a></li>
-	    <li><a href="#" id="historybutton" class="mainlevel1"
+	    <li><a href="#" id="historybutton" class="menulevel1"
 		   data-icon="custom" data-theme="d">History</a></li>
 	  </ul>
 	</div> <!-- /navbar -->
@@ -183,6 +186,50 @@ index.html contains 'page' divs responsible for displaying the main graph as wel
 
       <!-- CAREER PAGE FOOTER -->
       <div id="careerfooter">
+        <div data-role="navbar" class="menu">
+	  <div id="footermenu">
+	    <div><a href="#" class="contentbutton bottom-left" data-icon="custom" data-theme="c"></a></div>
+	    <div><a href="#" class="homebutton bottom-right" data-icon="custom" data-theme="c"></a></div>
+	  </div>
+	</div>
+      </div> <!-- /footer -->
+    </div> <!-- /page -->
+
+    <!-- COMPANY PAGE (TEMPLATE) ----------------------------------------------->
+    <div data-role="page" id="companytemplate" class="companytemplate" data-companyid="-1">
+      <div data-role="header" data-id="header" class="menu" id="companyheader">
+        <div data-role="navbar" class="menu" id="companymenubar">
+	  <ul id="companymenu">
+	    <li><a href="#" id="companyinfobutton" class="menulevel1"
+		   data-icon="custom" data-theme="d">Info</a></li>
+	    <li><a href="#" id="companyreviewsbutton" class="menulevel1"
+		   data-icon="custom" data-theme="d">Reviews</a></li>
+	    <li><a href="#" id="companycontactsbutton" class="menulevel1"
+		   data-icon="custom" data-theme="d">Contacts</a></li>
+	    <li><a href="#" id="companyinterviewsbutton" class="menulevel1"
+		   data-icon="custom" data-theme="d">Interviews</a></li>
+	  </ul>
+	</div> <!-- /navbar -->
+      </div> <!-- /header -->
+
+      <!-- COMPANY PAGE CONTENT -->
+      <div data-role="content" id="companycontent">
+	<div class="companypagecontent" id="companyinfocontent">
+          Company information will go here.
+	</div>
+	<div class="companypagecontent" id="companyreviewscontent">
+	  Company reviews will go here.
+	</div>
+	<div class="companypagecontent" id="companycontactscontent">
+	  Company contacts will go here.
+	</div>
+	<div class="companypagecontent" id="companyinterviewscontent">
+	  Company-specific interview tips will go here.
+	</div>
+      </div>
+
+      <!-- COMPANY PAGE FOOTER -->
+      <div id="companyfooter">
         <div data-role="navbar" class="menu">
 	  <div id="footermenu">
 	    <div><a href="#" class="contentbutton bottom-left" data-icon="custom" data-theme="c"></a></div>
