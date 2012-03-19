@@ -1,11 +1,22 @@
 .ui-content
 {
   padding:0;
+  width: 100%;
 }
 
 #header
 {
   overflow:auto;
+}
+
+.pagecontent
+{
+  width: 100%;
+}
+
+.careerpagecontent
+{
+  width: 100%;
 }
 
 /*footer styles*/

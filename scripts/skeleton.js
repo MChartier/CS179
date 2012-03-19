@@ -27,6 +27,8 @@ function openMain() {
   $(".pagecontent").hide();
   $("#searchbar").hide();
   $("#maincontent").show();
+
+  $(".homebutton").removeClass("ui-btn-active");
 }
 
 function openInfo() {
@@ -55,7 +57,6 @@ $('#main').live('pageinit', function(event) {
   $("#helpcontent").hide();
   hideSearch();
 
-
   // set up event handlers
   $(".mainlevel1").not("#morebutton").click(hideMore);
   $("#morebutton").click(openMore);
@@ -75,6 +76,34 @@ $('#main').live('pageinit', function(event) {
   footer.css("position", "absolute");
   footer.css("bottom", "0");
 
+  // set up handlers for dialog boxes in more menu
+  $(document).delegate('#graphbutton', 'click', function() {
+    $('<div>').simpledialog2({
+      mode: 'blank',
+      headerText: 'Some Stuff',
+      headerClose: true,
+      blankContent : "<p>Options for how to view the graph will go here.</p>"
+    })
+  });
+
+  $(document).delegate('#recsbutton', 'click', function() {
+    $('<div>').simpledialog2({
+      mode: 'blank',
+      headerText: 'Some Stuff',
+      headerClose: true,
+      blankContent : "<p>Recommendations will go here.</p>"
+    })
+  });
+
+  $(document).delegate('#filterbutton', 'click', function() {
+    $('<div>').simpledialog2({
+      mode: 'blank',
+      headerText: 'Some Stuff',
+      headerClose: true,
+      blankContent : "<p>Options for how to filter the graph will go here.</p>"
+    })
+  });
+
 });
 
 $('#career').live('pageinit', function(event) {
@@ -89,9 +118,9 @@ $('#career').live('pageinit', function(event) {
   $(".homebutton").click(openMain);
 
   // position navigational elements
-  var header = $("#header");
+  var header = $("#careerheader");
   var footer = $("#footer");
-  var contentpages = $(".pagecontent");
+  var contentpages = $(".careerpagecontent");
 
   header.css("z-index", "1");
   contentpages.css("position", "absolute");
@@ -99,5 +128,4 @@ $('#career').live('pageinit', function(event) {
   footer.css("z-index", "1");
   footer.css("position", "absolute");
   footer.css("bottom", "0");
-
 });

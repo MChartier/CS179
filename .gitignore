@@ -1,0 +1,7 @@
+# Emacs Files #
+###############
+*~
+
+# Specific to localhost #
+#########################
+includes/host.php
