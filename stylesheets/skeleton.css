@@ -19,8 +19,7 @@
   width: 100%;
 }
 
-
-/*career page styles*/
+/*footer styles*/
 .bottom-left{
 	position:fixed;
 	left:5px;
@@ -35,4 +34,31 @@
 	bottom:5px;
 	height:47px;
 	width:47px;
+}
+
+/*career page styles*/
+
+.remove-icon{
+	height:20px;
+	width:20px;
+}
+
+.add-icon{
+	height:20px;
+	width:20px;
+  padding:10px;
+}
+
+
+/*general alignment*/
+.single-indent{
+	margin-left:20px;
+}
+
+.right-aligning{
+	text-align:right;
+}
+
+.centering{
+	text-align:center;
 }

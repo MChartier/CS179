@@ -39,13 +39,13 @@ switches tabs.
   </head>
 
   <body>
-    <div data-role="page" id="main" data-companyid="
+    <div data-role="page" id="company" data-companyid="
     <?
       print $_POST["companyid"];
     ?>
     ">
       <div data-role="header" data-id="header" class="menu" id="header">
-        <div data-role="navbar" class="menu" id="menubar">
+        <div data-role="navbar" class="menu" id="companymenubar">
 	  <ul id="companymenu">
 	    <li><a href="#" id="infobutton" class="mainlevel1"
 		   data-icon="custom" data-theme="d">Info</a></li>
@@ -60,7 +60,7 @@ switches tabs.
       </div> <!-- /header -->
 
       <!-- MAIN PAGE CONTENT -->
-      <div data-role="content" id="content">
+      <div data-role="content" id="companycontent">
 	<div class="companypagecontent" id="infocontent">
           Company information will go here.
 	</div>
