@@ -19,6 +19,13 @@
   width: 100%;
 }
 
+#career{
+  height:100%;
+  position:relative;
+  overflow:auto;
+  width:100%;
+}
+
 /*footer styles*/
 .bottom-left{
 	position:fixed;
