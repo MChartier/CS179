@@ -43,6 +43,13 @@
 	width:20px;
 }
 
+.add-icon{
+	height:20px;
+	width:20px;
+  padding:10px;
+}
+
+
 /*general alignment*/
 .single-indent{
 	margin-left:20px;
