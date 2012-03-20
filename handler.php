@@ -23,6 +23,8 @@ function getConcentrations() {
     print json_encode($rows);
 }
 
+$opcode = $_POST["opcode"];
+
 switch($opcode) {
 case GETCONCENTRATIONS:
     getConcentrations();  

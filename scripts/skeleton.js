@@ -178,29 +178,36 @@ $('#career').live('pageinit', function(event) {
   $(".homebutton").click(openMain);
 
   // asynchronously load concentrations list
-  // $.ajax({
-  //   url: "handler.php",
-  //   type: "POST",
-  //   data: {
-  //     option: 0
-  //   }
-  // }).done(function(msg) {
-  //   var concentrations = $.parseJSON(msg);
+  $.ajax({
+    url: "handler.php",
+    type: "POST",
+    data: {
+      opcode: 0
+    }
+  }).done(function(msg) {
+    var concentrations = $.parseJSON(msg);
+    var selector = $("#concentration");
 
-  //   var selector = $("#concentration");
+    // clear current contents of selector
+    selector.children().remove();
 
-  //   $("<option/>", {
-  //     value: "",
-  //     html: "Select Concentration..."
-  //   }).appendTo(selector);
+    // update initial 'display' option
+    $("<option/>", {
+      value: "",
+      html: "Select Concentration..."
+    }).appendTo(selector);
 
-  //   for (i in concentrations) {
-  //     $("<option/>", {
-  // 	value: concentrations[i].uid,
-  // 	html: concentrations[i].name
-  //     }).appendTo(selector);
-  //   }
-  // });
+    // include option for each concentration
+    for (i in concentrations) {
+      $("<option/>", {
+  	value: concentrations[i].uid,
+  	html: concentrations[i].name
+      }).appendTo(selector);
+    }
+
+    // refresh display of selectmenu
+    selector.selectmenu("refresh");
+  });
 
 
   // position navigational elements
