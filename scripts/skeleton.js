@@ -163,6 +163,32 @@ $('#career').live('pageinit', function(event) {
 
   $(".homebutton").click(openMain);
 
+  // asynchronously load concentrations list
+  // $.ajax({
+  //   url: "handler.php",
+  //   type: "POST",
+  //   data: {
+  //     option: 0
+  //   }
+  // }).done(function(msg) {
+  //   var concentrations = $.parseJSON(msg);
+
+  //   var selector = $("#concentration");
+
+  //   $("<option/>", {
+  //     value: "",
+  //     html: "Select Concentration..."
+  //   }).appendTo(selector);
+
+  //   for (i in concentrations) {
+  //     $("<option/>", {
+  // 	value: concentrations[i].uid,
+  // 	html: concentrations[i].name
+  //     }).appendTo(selector);
+  //   }
+  // });
+
+
   // position navigational elements
   var header = $("#careerheader");
   var footer = $("#footer");
@@ -188,14 +214,14 @@ $('#company').live('pageinit', function(event) {
   $(".homebutton").click(openMain);
 
   // position navigational elements
-  // var header = $("#companyheader");
-  // var footer = $("#companyfooter");
-  // var contentpages = $(".companypagecontent");
+  var header = $("#companyheader");
+  var footer = $("#companyfooter");
+  var contentpages = $(".companypagecontent");
 
-  // header.css("z-index", "1");
-  // contentpages.css("position", "absolute");
-  // contentpages.css("top", "64px");
-  // footer.css("z-index", "1");
-  // footer.css("position", "absolute");
-  // footer.css("bottom", "0");
+  header.css("z-index", "1");
+  contentpages.css("position", "absolute");
+  contentpages.css("top", "64px");
+  footer.css("z-index", "1");
+  footer.css("position", "absolute");
+  footer.css("bottom", "0");
 });
