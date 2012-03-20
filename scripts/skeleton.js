@@ -96,6 +96,20 @@ function openCompanyInterviews() {
   $("#companyinterviewscontent").show();
 }
 
+function removeFavoriteCompany(id){
+  //TODO remove favorite from database!!!
+
+  $("li#fav"  + id).remove();
+	$("#favoritecompanies").listview("refresh");
+}
+
+function removeFavoriteField(id){
+  //TODO remove favorite from database!!!
+
+  $("li#favfield"  + id).remove();
+	$("#favoritefields").listview("refresh");
+}
+
 // Page load script ------------------------------------------------------------
 
 $('#main').live('pageinit', function(event) {
@@ -200,6 +214,49 @@ $('#career').live('pageinit', function(event) {
   footer.css("z-index", "1");
   footer.css("position", "absolute");
   footer.css("bottom", "0");
+
+  
+  //populate career page tabs
+  
+  //experience tab
+  //TODO get data for user FROM DATABASE
+  experienceList = [{"company":"Aunt Jemima's", "startDate":"06/2011", "endDate":"08/2011", "position":"syrup intern", "id":"3"},{"company":"McDonalds", "startDate":"06/2010", "endDate":"08/2010", "position":"junior burger flipper", "id":"7"}];
+  for(i in experienceList){
+  	var newItem = $("<li><div>" + experienceList[i].company + "</div></br><div>" + experienceList[i].startDate + "-" + experienceList[i].endDate + "</div></br><div>" + experienceList[i].position + "</div></li>");
+		newItem.click(function() {
+      //TODO actually open company with correct ID
+      openCompany(experienceList[i].id);
+		});
+    $("#experiencelist").append(newItem);
+    $("#experiencelist").listview("refresh");						
+  }
+  
+  //favorites tab
+  //TODO get data for user FROM DATABASE
+  favoriteCompanies = [{"company":"Aunt Jemima's", "id":"3"},{"company":"McDonalds", "id":"7"},{"company":"Meals on Wheels", "id":"5068"}];
+  for(i in favoriteCompanies){
+  	var newItem = $("<li id='fav" + favoriteCompanies[i].id + "'><div class='ui-grid-a'><div class='ui-block-a'>" + favoriteCompanies[i].company + "</div><div class='ui-block-b'><div class='right-aligning'><img  onclick='removeFavoriteCompany(" + favoriteCompanies[i].id + ")' class='remove-icon' src='images/remove-icon.png' alt='Remove'/></div></div></div></li>");
+		newItem.click(function() {
+      //TODO actually open company with correct ID
+        openCompany(favoriteCompanies[i].id);
+		});
+    $("#favoritecompanies").append(newItem);
+    $("#favoritecompanies").listview("refresh");						
+  }
+  
+  
+  //TODO get data for user FROM DATABASE
+  favoriteFields = [{"field":"Food", "id":"3"},{"field":"Bunny Science", "id":"7"},{"field":"Lulz forevah", "id":"5068"}];
+  for(i in favoriteFields){
+  	var newItem = $("<li id='favfield" + favoriteFields[i].id + "'><div class='ui-grid-a'><div class='ui-block-a'>" + favoriteFields[i].field + "</div><div class='ui-block-b'><div class='right-aligning'><img  onclick='removeFavoriteField(" + favoriteFields[i].id + ")' class='remove-icon' src='images/remove-icon.png' alt='Remove'/></div></div></div></li>");
+		newItem.click(function() {
+      //TODO not really sure what, though. needs to be discussed
+		});
+    $("#favoritefields").append(newItem);
+    $("#favoritefields").listview("refresh");						
+  }
+
+
 });
 
 $('#company').live('pageinit', function(event) {
