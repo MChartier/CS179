@@ -1,0 +1,61 @@
+<!-- MAIN PAGE ------------------------------------------------------------->
+<div data-role="page" id="main">
+
+  <!-- MAIN PAGE HEADER -->
+  <div data-role="header" data-id="header" class="menu" id="header">
+    <div data-role="navbar" class="menu" id="menubar">
+      <ul id="mainmenu">
+	<li><a href="#career" id="careerbutton" class="menulevel1"
+	       data-icon="custom" data-theme="d">Career</a></li>
+	<li><a href="#" id="searchbutton" class="menulevel1"
+	       data-icon="custom" data-theme="d">Search</a></li>
+	<li><a href="#" id="helpbutton" class="menulevel1"
+	       data-icon="custom" data-theme="d">Help</a></li>
+	<li><a href="#" id="morebutton" class="menulevel1"
+	       data-icon="custom" data-theme="d">More</a></li>
+      </ul>
+    </div> <!-- /navbar -->
+    <div data-role="navbar" class="menu">
+      <ul id="moremenu">
+	<li><a href="#" id="graphbutton" class="menulevel2"
+	       data-icon="custom" data-theme="c">Graph</a></li>
+	<li><a href="#" id="recsbutton" class="menulevel2"
+	       data-icon="custom" data-theme="c">Recs</a></li>
+	<li><a href="#" id="filterbutton" class="menulevel2"
+	       data-icon="custom" data-theme="c">Filter</a></li>
+      </ul>
+    </div> <!-- /navbar -->
+    <div id="searchbar">
+      <input data-type="search" data-theme="c">
+    </div> <!-- /searchbar -->
+  </div> <!-- /header -->
+
+  <!-- MAIN PAGE CONTENT -->
+  <div data-role="content" id="content">
+    <!-- Main content. Graph canvas goes in here. -->
+    <div class="pagecontent" id="maincontent">
+    </div>
+    <!-- Help content. -->
+    <div class="pagecontent" id="helpcontent">
+      <div data-role="header" data-id="foo1" data-position="fixed">
+	<div data-role="navbar">
+	  <ul>
+	    <li><a href="a.html" data-prefetch="true">Graph Browsing</a></li>
+	    <li><a href="b.html" class="ui-btn-active ui-state-persist">Filter</a></li>
+	    <li><a href="c.html" class="ui-btn-active ui-state-persist">Search</a></li>
+	    <li><a href="d.html" data-prefetch="true" data-transition="slideup" class="ui-btn-active ui-state-persist">Recommendations</a></li>
+	  </ul>
+	</div><!-- /navbar -->
+      </div><!-- /header -->
+    </div>
+  </div>
+  <!-- MAIN PAGE FOOTER -->
+  <div id="footer">
+    <div data-role="navbar" class="menu">
+      <div id="footermenu">
+	<div><a href="#" class="contentbutton bottom-left" data-icon="custom" data-theme="c"></a></div>
+	<div><a href="#" class="homebutton bottom-right" data-icon="custom" data-theme="c"></a></div>
+      </div>
+    </div>
+  </div> <!-- /footer -->
+</div> <!-- /page -->
