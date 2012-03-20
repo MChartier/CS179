@@ -57,36 +57,15 @@ function openHistory() {
 
 // Company pages ---------------------------------------------------------------
 
-function getCompanyPage(companyId) {
-  return $("#companypage" + companyId);
-}
-
-function isCompanyOpen(companyId) {
-  return (getCompanyPage(companyId).length > 0);
-}
-
 // 'opening' a company means creating a page for said company in the DOM
 // and then navigating to it
 function openCompany(companyId) {
-  // if company page already exists, display error message and do nothing
-  if(isCompanyOpen(companyId)) {
-    alert('ERROR: Tried to open company page for company with ID ' +
-	  companyId + ', but company page already exists.');
-    return;
-  }
+  // get company page
+  var companyPage = $("#company");
 
-  // Credit to Mack Staples of securityandcaffeine.com for this trick.
-  // Copy of template page is created with all the nice JQM formatting.
-  // Upon initialization, we'll asynchronously populate all of the 
-  // company-specific info!
-  var companyPage = $("#companytemplate").clone();
+  // load company-specific content...
   
-  companyPage.attr('id', 'companypage' + companyId);
-  companyPage.attr('data-companyid', companyId);
-
-  // add the new page to the DOM
-  companyPage.appendTo('body');
-
+  // redirect to company page
   $.mobile.changePage(companyPage);
 }
 
@@ -197,7 +176,7 @@ $('#career').live('pageinit', function(event) {
   footer.css("bottom", "0");
 });
 
-$('#companytemplate').live('pageinit', function(event) {
+$('#company').live('pageinit', function(event) {
   openCompanyInfo();
 
   // set up event handlers
