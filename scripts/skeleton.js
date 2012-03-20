@@ -1,3 +1,5 @@
+// Main page -------------------------------------------------------------------
+
 function openSearch() {
   openMain();
   $("#searchbar").show();
@@ -31,7 +33,9 @@ function openMain() {
   $(".homebutton").removeClass("ui-btn-active");
 }
 
-function openInfo() {
+// Career page -----------------------------------------------------------------
+
+function openCareerInfo() {
   $(".careerpagecontent").hide();
   $("#infocontent").show();
 }
@@ -51,6 +55,47 @@ function openHistory() {
   $("#historycontent").show();
 }
 
+// Company pages ---------------------------------------------------------------
+
+// 'opening' a company means creating a page for said company in the DOM
+// and then navigating to it
+function openCompany(companyId) {
+  // get company page
+  var companyPage = $("#company");
+
+  // load company-specific content...
+  
+  // redirect to company page
+  $.mobile.changePage(companyPage);
+}
+
+// 'closing' a company means cleaning up that company's page in the DOM
+// This will help to prevent the document object model from getting overly 
+// large and slowing things down.
+function closeCompany(companyId) {
+  getCompanyPage(companyId).remove();
+}
+
+function openCompanyInfo() {
+  $(".companypagecontent").hide();
+  $("#companyinfocontent").show();
+}
+
+function openCompanyReviews() {
+  $(".companypagecontent").hide();
+  $("#companyreviewscontent").show();
+}
+
+function openCompanyContacts() {
+  $(".companypagecontent").hide();
+  $("#companycontactscontent").show();
+}
+
+function openCompanyInterviews() {
+  $(".companypagecontent").hide();
+  $("#companyinterviewscontent").show();
+}
+
 function removeFavoriteCompany(id){
   //TODO remove favorite from database!!!
 
@@ -64,6 +109,8 @@ function removeFavoriteField(id){
   $("li#favfield"  + id).remove();
 	$("#favoritefields").listview("refresh");
 }
+
+// Page load script ------------------------------------------------------------
 
 $('#main').live('pageinit', function(event) {
   // hide content we don't need to see yet
@@ -117,14 +164,13 @@ $('#main').live('pageinit', function(event) {
       blankContent : "<p>Options for how to filter the graph will go here.</p>"
     })
   });
-
 });
 
 $('#career').live('pageinit', function(event) {
-  openInfo();
+  openCareerInfo();
 
   // set up event handlers
-  $("#infobutton").click(openInfo);
+  $("#infobutton").click(openCareerInfo);
   $("#xpbutton").click(openXP);
   $("#favoritesbutton").click(openFavorites);
   $("#historybutton").click(openHistory);
@@ -142,7 +188,7 @@ $('#career').live('pageinit', function(event) {
   footer.css("z-index", "1");
   footer.css("position", "absolute");
   footer.css("bottom", "0");
-  
+
   
   //populate career page tabs
   
@@ -153,7 +199,7 @@ $('#career').live('pageinit', function(event) {
   	var newItem = $("<li><div>" + experienceList[i].company + "</div></br><div>" + experienceList[i].startDate + "-" + experienceList[i].endDate + "</div></br><div>" + experienceList[i].position + "</div></li>");
 		newItem.click(function() {
       //TODO actually open company with correct ID
-		//	openCompany(experienceList[i].id);
+      openCompany(experienceList[i].id);
 		});
     $("#experiencelist").append(newItem);
     $("#experiencelist").listview("refresh");						
@@ -166,7 +212,7 @@ $('#career').live('pageinit', function(event) {
   	var newItem = $("<li id='fav" + favoriteCompanies[i].id + "'><div class='ui-grid-a'><div class='ui-block-a'>" + favoriteCompanies[i].company + "</div><div class='ui-block-b'><div class='right-aligning'><img  onclick='removeFavoriteCompany(" + favoriteCompanies[i].id + ")' class='remove-icon' src='images/remove-icon.png' alt='Remove'/></div></div></div></li>");
 		newItem.click(function() {
       //TODO actually open company with correct ID
-		//	openCompany(favoriteCompanies[i].id);
+        openCompany(favoriteCompanies[i].id);
 		});
     $("#favoritecompanies").append(newItem);
     $("#favoritecompanies").listview("refresh");						
@@ -183,5 +229,31 @@ $('#career').live('pageinit', function(event) {
     $("#favoritefields").append(newItem);
     $("#favoritefields").listview("refresh");						
   }
+
+
+});
+
+$('#company').live('pageinit', function(event) {
+  openCompanyInfo();
+
+  // set up event handlers
+  $("#companyinfobutton").click(openCompanyInfo);
+  $("#companyreviewsbutton").click(openCompanyReviews);
+  $("#companycontactsbutton").click(openCompanyContacts);
+  $("#companyinterviewsbutton").click(openCompanyInterviews);
+
+  $(".homebutton").click(openMain);
+
+  // position navigational elements
+  // var header = $("#companyheader");
+  // var footer = $("#companyfooter");
+  // var contentpages = $(".companypagecontent");
+
+  // header.css("z-index", "1");
+  // contentpages.css("position", "absolute");
+  // contentpages.css("top", "64px");
+  // footer.css("z-index", "1");
+  // footer.css("position", "absolute");
+  // footer.css("bottom", "0");
 
 });
