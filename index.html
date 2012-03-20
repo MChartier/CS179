@@ -68,10 +68,9 @@ index.html contains 'page' divs responsible for displaying the main graph as wel
 	</div>
 	<!-- Help content. -->
 	<div class="pagecontent" id="helpcontent">
-	  Helpful documentation will be included here.
+	  Helpful documentation will be included here.gg
 	</div>
       </div>
-
       <!-- MAIN PAGE FOOTER -->
       <div id="footer">
         <div data-role="navbar" class="menu">
@@ -106,77 +105,150 @@ index.html contains 'page' divs responsible for displaying the main graph as wel
       <div data-role="content" id="careercontent">
 	<!-- 'Info' tab -->
 	<div class="careerpagecontent" id="infocontent">
-	  <form>
-	    <div data-role="fieldcontain">
-	      <label for="name">Full name</label>
-	      <input type="text" name="name" id="name" value="" placeholder="Name"/>
-	    </div>
-	    
-	    <div data-role="fieldcontain">
-	      <label for="year">Year</label>
-	      <input type="number" name="year" id="year" value="" placeholder="Year"/>
-	    </div>
-	    
-	    <div data-role="fieldcontain">
-	      <label for="concentration" class="select">Concentration:</label>
-	      <select name="concentration" id="concentration" data-native-menu="false">
-		<option></option>
-		<option value="applied-math">Applied Math</option>
-		<option value="computer-science">Computer Science</option>
-		<option value="biology">Biology</option>
-		<option value="english">English</option>
-	      </select>
-	    </div> 
-	    
-	    <div data-role="fieldcontain">
-	      <label for="gpa">GPA</label>
-	      <input type="number" name="gpa" id="gpa" value="" placeholder="GPA"/>
-	    </div>
-	    
-	    <div data-role="fieldset">
-	      <legend>Interests:</legend>
-	      <div data-role="fieldcontain">
-		<label for="interest1">1.</label>
-		<select name="interest1" id="interest1" value="">
-		  <option></option>
-		</select>
-	      </div>
-	      
-	      <div data-role="fieldcontain">
-		<label for="interest2">2.</label>
-		<select name="interest2" id="interest2" value="">
-		  <option></option>
-		</select>
-	      </div>
-	      
-	      <div data-role="fieldcontain">
-		<label for="interest3">3.</label>
-		<select name="interest3" id="interest3" value="">
-		  <option></option>
-		</select>
-	      </div>
-	    </div>
-	    <input type="submit" value="Submit" data-icon="check" data-inline="true"/>
-	  </form>
+		<form>
+			<div data-role="fieldcontain">
+				<label for="name">Full name</label>
+				<input type="text" name="name" id="name" value="" placeholder="Name"/>
+			</div>
+			
+			<div data-role="fieldcontain">
+				<label for="year">Year</label>
+				<input type="number" name="year" id="year" value="" placeholder="Year"/>
+			</div>
+			
+			<div data-role="fieldcontain">
+				<label for="concentration" class="select">Concentration</label>
+				<select name="concentration" id="concentration" data-native-menu="false">
+					<option value="">Concentration</option>
+					<option value="applied-math">Applied Math</option>
+					<option value="computer-science">Computer Science</option>
+					<option value="biology">Biology</option>
+					<option value="english">English</option>
+				</select>
+			</div> 
+			
+			<div data-role="fieldcontain">
+				<label for="gpa">GPA</label>
+				<input type="number" name="gpa" id="gpa" value="" placeholder="GPA"/>
+			</div>
+			
+		
+			<div data-role="fieldset">
+			<legend>Interests:</legend>
+				<div data-role="fieldcontain">
+					<label for="interest1">1.</label>
+					<select name="interest1" id="interest1" value="">
+						<option></option>
+					</select>
+				</div>
+				
+				<div data-role="fieldcontain">
+					<label for="interest2">2.</label>
+					<select name="interest2" id="interest2" value="">
+						<option></option>
+					</select>
+				</div>
+				
+				<div data-role="fieldcontain">
+					<label for="interest3">3.</label>
+					<select name="interest3" id="interest3" value="">
+						<option></option>
+					</select>
+				</div>
+			</div>
+			
+			<div class="centering"><input type="submit" value="Save" data-icon="check" data-inline="true"/></div>		
+		</form>
 	</div>
 
 	<!-- 'Work Experience' tab -->
 	<div class="careerpagecontent" id="XPcontent">
-	  Work experience stuff.
+		<h3>Work Experience</h3>
+			<ul id="experiencelist" data-role="listview" >
+
+			</ul>
+		
+		<form>
+			<div data-role="fieldcontain">
+				<label for="companyname">Company name</label>
+				<input type="text" name="companyname" id="companyname" value="" class="single-indent"/>
+			</div>
+			
+			Employment Period
+			<div data-role="fieldcontain" class="single-indent">
+				<label for="periodfrom">From</label>
+				<input type="date" name="periodfrom" id="periodfrom" value=""/>
+			</div>
+			
+			<div data-role="fieldcontain" class="single-indent">
+				<label for="periodto">To</label>
+				<input type="date" name="periodto" id="periodto" value=""/>
+			</div>
+			
+			<div data-role="fieldcontain">
+				<label for="jobtitle">Title</label>
+				<input type="text" name="jobtitle" id="jobtitle" value="" class="single-indent"/>
+			</div>
+			
+			<div class="centering"><input type="submit" value="Add another position" data-icon="add" data-inline="true"/></div>
+							
+		</form>
+		
+		<div class="centering"><input type="submit" value="Save" data-icon="check" data-inline="true"/></div>
+			
 	</div>
 
 	<!-- 'Favorites' tab -->
 	<!-- 0 padding on content seems to be causing issues with listview here... -->
 	<div class="careerpagecontent" id="favoritescontent">
-	  <ul>
-	    <li>Microsoft</li>
-	    <li>Facebook</li>
-	    <li>Google</li>
-	    <li>APT</li>
-	    <li>Motorola</li>
-	  </ul>
+		<h3>Favorites</h3>
+	  
+		<div>Favorite fields</div>
+		</br>
+		<div>
+			<ul data-role="listview" >
+				<li>
+					 <div class="ui-grid-a">
+						<div class="ui-block-a">
+							Food
+						</div>
+						<div class="ui-block-b">
+							<div class="right-aligning"><img class="remove-icon" src="images/remove-icon.png" alt="Remove"/></div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="ui-grid-a">
+						<div class="ui-block-a">
+							Entertainment
+						</div>
+						<div class="ui-block-b">
+							<div class="right-aligning"><img class="remove-icon" src="images/remove-icon.png" alt="Remove"/></div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		</br>
+		<input type="text" name="addfavfield" id="addfavfield" value="" class="single-indent"/>
+		</br>
+		</br>
+		
+		
+		<div>Favorite Companies</div>
+		</br>
+		<div>
+			<ul data-role="listview" >
+				<li>McDonalds</li>
+				<li>Aunt Jemima's</li>
+				<li>Disney</li>
+			</ul>
+		</div>
+		</br>
+		<input type="text" name="addfavfield" id="addfavfield" value="" class="single-indent"/>
 	</div>
 
+	
 	<!-- 'History' tab -->
 	<div class="careerpagecontent" id="historycontent">
 	  History stuff.
