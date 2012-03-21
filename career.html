@@ -77,36 +77,31 @@
     <!-- 'Work Experience' tab -->
     <div class="careerpagecontent" id="XPcontent">
       <h3>Work Experience</h3>
-      <ul id="experiencelist" data-role="listview" >
-
-      </ul>
+      <ul id="experiencelist" data-role="listview" ></ul>
       
       <form>
-	<div data-role="fieldcontain">
-	  <label for="companyname">Company name</label>
-	  <input type="text" name="companyname" id="companyname" value="" class="single-indent"/>
-	</div>
+        <div data-role="fieldcontain">
+          <label for="companyname">Company name</label>
+          <input type="text" name="companyname" id="companyname" value="" class="single-indent"/>
+        </div>
 	
-	Employment Period
-	<div data-role="fieldcontain" class="single-indent">
-	  <label for="periodfrom">From</label>
-	  <input type="date" name="periodfrom" id="periodfrom" value=""/>
-	</div>
+        Employment Period
+        <div data-role="fieldcontain" class="single-indent">
+          <label for="periodfrom">From</label>
+          <input type="date" name="periodfrom" id="periodfrom" value=""/>
+        </div>
 	
-	<div data-role="fieldcontain" class="single-indent">
-	  <label for="periodto">To</label>
-	  <input type="date" name="periodto" id="periodto" value=""/>
-	</div>
-	
-	<div data-role="fieldcontain">
-	  <label for="jobtitle">Title</label>
-	  <input type="text" name="jobtitle" id="jobtitle" value="" class="single-indent"/>
-	</div>
-	
-	<div class="centering"><input type="submit" value="Add another position" data-icon="add" data-inline="true"/></div>
-	
+        <div data-role="fieldcontain" class="single-indent">
+          <label for="periodto">To</label>
+          <input type="date" name="periodto" id="periodto" value=""/>
+        </div>
+        
+        <div data-role="fieldcontain">
+          <label for="jobtitle">Title</label>
+          <input type="text" name="jobtitle" id="jobtitle" value="" class="single-indent"/>
+        </div>     
       </form>
-      
+      <div class="centering"><input id="addexperiencebutton" type="submit" value="Add another position" data-icon="add" data-inline="true"/></div>
       <div class="centering"><input type="submit" value="Save" data-icon="check" data-inline="true"/></div>
       
     </div> <!-- /XP tab -->
@@ -118,28 +113,27 @@
       <div>Favorite fields</div>
       <br/>
       <div>
-	<ul id="favoritefields" data-role="listview" ></ul>
+        <ul id="favoritefields" data-role="listview" ></ul>
       </div>
       <br/>
       
-      <img class='add-icon' src='images/add-icon.png' alt='Remove'/>
+      <img id="addfavfieldbutton" class='add-icon' src='images/add-icon.png' alt='Remove'/>
       <div class="input-button-inline">
         <input type="text" name="addfavfield" id="addfavfield" value=""/>
       </div>
       <br/>
       <br/>
-      
-      
+            
       <div>Favorite Companies</div>
       <br/>
       <div>
-	<ul id="favoritecompanies" data-role="listview" ></ul>
+        <ul id="favoritecompanies" data-role="listview" ></ul>
       </div>
       <br/>
       
-      <img class='add-icon' src='images/add-icon.png' alt='Remove'/>
+      <img id="addfavcompanybutton" class='add-icon' src='images/add-icon.png' alt='Remove'/>
       <div class="input-button-inline">
-        <input type="text" name="addfavcompanny" id="addfavcompany" value=""/>
+        <input type="text" name="addfavcompany" id="addfavcompany" value=""/>
       </div>
     </div> <!-- /favorites -->
 
