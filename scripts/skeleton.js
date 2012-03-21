@@ -1,4 +1,4 @@
-// Main page -------------------------------------------------------------------
+// Main page -----------------------------------------------------------------
 
 function openSearch() {
   hideHelp();
@@ -45,9 +45,10 @@ function openMain() {
 
   // don't highlight the home button as active!
   $(".homebutton").removeClass("ui-btn-active");
+  $(".backbutton").removeClass("ui-btn-active");
 }
 
-// Career page -----------------------------------------------------------------
+// Career page ---------------------------------------------------------------
 
 function openCareerInfo() {
   $(".careerpagecontent").hide();
@@ -69,7 +70,7 @@ function openHistory() {
   $("#historycontent").show();
 }
 
-// Company pages ---------------------------------------------------------------
+// Company pages -------------------------------------------------------------
 
 // 'opening' a company means creating a page for said company in the DOM
 // and then navigating to it
@@ -123,6 +124,7 @@ function removeFavoriteField(id){
 	$("#favoritefields").listview("refresh");
 }
 
+// Page load script ----------------------------------------------------------
 /**
  * Function that adds a new field to the list of 
  * favorite fields in my career
@@ -400,14 +402,14 @@ $('#career').live('pageinit', function(event) {
   for(var i in favoriteCompanies) {
     addFavoriteCompany(favoriteCompanies[i]);
   }  
-  
+
   // TODO: get data for user FROM DATABASE
   var favoriteFields = [{"field":"Food", "id":"3"},{"field":"Bunny Science", "id":"7"},{"field":"Lulz forevah", "id":"5068"}];
 
   for(var i in favoriteFields) {
     addFavoriteField(favoriteFields[i]);    
   }
-  
+ 
   //TODO: get data for user FROM DATABASE
   //currently expects list to be sorted in the order of most recent->less recent
   var historyItems = [{"activity":"Decided to take a job at Burger King", "timestamp":"5/9"},                      
@@ -420,6 +422,7 @@ $('#career').live('pageinit', function(event) {
     addHistoryItem(historyItems[i]);    
   }
   
+
   // position navigational elements
   var header = $("#careerheader");
   var footer = $("#footer");

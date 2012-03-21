@@ -57,15 +57,21 @@
   background-size: 28px 28px; 
 }
 
+.backbutton .ui-icon 
+{ 
+  background:  url(../images/glyphish-icons/13-target.png) 50% 50% no-repeat; 
+  background-size: 28px 28px; 
+}
+
 .contentbutton .ui-icon 
 { 
-  background:  url(../images/glyphish-icons/13-target.png) 50% 50% no-repeat;  
+  background:  url(../images/glyphish-icons/13-target.png) 50% 50% no-repeat; 
   background-size: 28px 28px; 
 }
 
 .homebutton .ui-icon 
 { 
-  background:  url(../images/glyphish-icons/55-network.png) 50% 50% no-repeat;  
+  background:  url(../images/glyphish-icons/55-network.png) 50% 50% no-repeat;
   background-size: 24px 24px; 
 }
 

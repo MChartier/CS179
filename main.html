@@ -13,7 +13,7 @@
 	       data-icon="custom" data-theme="d">Help</a></li>
 	<li><a href="#" id="morebutton" class="menulevel1"
 	       data-icon="custom" data-theme="d">More</a></li>
-      </ul>
+      </ul> <!-- /mainmenu -->
     </div> <!-- /navbar -->
 
     <!-- Help content. -->
@@ -27,9 +27,8 @@
 	       data-theme="c">Search</a></li>
 	<li><a href="#" class="helpmenuitem"
 	       data-theme="c">Recommendations</a></li>
-      </ul>
-    </div><!-- /navbar -->
-
+      </ul> <!-- /helpmenu -->
+    </div> <!-- /navbar -->
 
     <div data-role="navbar" class="menu">
       <ul id="moremenu">
@@ -39,7 +38,7 @@
 	       data-icon="custom" data-theme="c">Recs</a></li>
 	<li><a href="#" id="filterbutton" class="menulevel2"
 	       data-icon="custom" data-theme="c">Filter</a></li>
-      </ul>
+      </ul> <!-- /moremenu -->
     </div> <!-- /navbar -->
     <div id="searchbar">
       <input data-type="search" data-theme="c">
@@ -49,17 +48,14 @@
   <!-- MAIN PAGE CONTENT -->
   <div data-role="content" id="content">
     <!-- Main content. Graph canvas goes in here. -->
-    <div class="pagecontent" id="maincontent">
-    </div>
-  </div>
+    <div class="pagecontent" id="maincontent"></div>
+  </div> <!-- /content -->
 
   <!-- MAIN PAGE FOOTER -->
   <div id="footer">
-    <div data-role="navbar" class="menu">
-      <div id="footermenu">
-	<div><a href="#" class="contentbutton bottom-left" data-icon="custom" data-theme="c"></a></div>
-	<div><a href="#" class="homebutton bottom-right" data-icon="custom" data-theme="c"></a></div>
-      </div>
-    </div>
+    <div data-role="navbar" class="menu" id="footermenu">
+      <div><a href="#" class="contentbutton bottom-left" data-icon="custom" data-theme="c"></a></div>
+      <div><a href="#" class="homebutton bottom-right" data-icon="custom" data-theme="c"></a></div>
+    </div> <!-- /navbar -->
   </div> <!-- /footer -->
 </div> <!-- /page -->
