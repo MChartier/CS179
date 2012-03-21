@@ -41,6 +41,8 @@ function openMain() {
   hideMore();
   hideSearch();
 
+  $("#maincontent").show();
+
   // don't highlight the home button as active!
   $(".homebutton").removeClass("ui-btn-active");
 }
@@ -262,15 +264,18 @@ $('#career').live('pageinit', function(event) {
   			   {"company":"McDonalds", "id":"7"},
   			   {"company":"Meals on Wheels", "id":"5068"}];
 
-  var newItem = $("<li id='fav" + favoriteCompanies[i].id + "' + data-companyid='" + favoriteCompanies[i].id + "'><div class='ui-grid-a'><div class='ui-block-a'>" + favoriteCompanies[i].company + "</div><div class='ui-block-b'><div class='right-aligning'><img  onclick='removeFavoriteCompany(" + favoriteCompanies[i].id + ")' class='remove-icon' src='images/remove-icon.png' alt='Remove'/></div></div></div></li>");
+  for(var i in favoriteCompanies) {
 
-  newItem.click(function(event) {
-    //TODO actually open company with correct ID
-    openCompany((this).getAttribute("data-companyid"));
-  });
-  $("#favoritecompanies").append(newItem);
-  $("#favoritecompanies").listview("refresh");						
-  
+    var newItem = $("<li id='fav" + favoriteCompanies[i].id + "' + data-companyid='" + favoriteCompanies[i].id + "'><div class='ui-grid-a'><div class='ui-block-a'>" + favoriteCompanies[i].company + "</div><div class='ui-block-b'><div class='right-aligning'><img  onclick='removeFavoriteCompany(" + favoriteCompanies[i].id + ")' class='remove-icon' src='images/remove-icon.png' alt='Remove'/></div></div></div></li>");
+
+    newItem.click(function(event) {
+      //TODO actually open company with correct ID
+      openCompany((this).getAttribute("data-companyid"));
+    });
+    $("#favoritecompanies").append(newItem);
+    $("#favoritecompanies").listview("refresh");						
+  }  
+
   //TODO get data for user FROM DATABASE
   favoriteFields = [{"field":"Food", "id":"3"},{"field":"Bunny Science", "id":"7"},{"field":"Lulz forevah", "id":"5068"}];
   for(var i in favoriteFields){
