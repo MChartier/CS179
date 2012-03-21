@@ -123,6 +123,112 @@ function removeFavoriteField(id){
 	$("#favoritefields").listview("refresh");
 }
 
+/**
+ * Function that adds a new field to the list of 
+ * favorite fields in my career
+ */
+function addFavoriteField(field){
+  var newListItem = $("<li/>", {
+    id: 'favfield' + field.id
+  });
+
+  var gridADiv = $("<div/>", {
+    class: 'ui-grid-a'
+  }).appendTo(newListItem);
+
+  var blockADiv = $("<div/>", {
+    class: 'ui-block-a',
+    html: field.field
+  }).click(function(event) {
+    // TODO: not really sure what, though. needs to be discussed
+  }).appendTo(gridADiv);
+
+  var blockBDiv = $("<div/>", {
+    class: 'ui-block-b right-aligning'
+  }).appendTo(gridADiv);
+
+  $("<img/>", {
+    class: 'remove-icon',
+    src: 'images/remove-icon.png',
+    alt: 'Remove',
+    "data-fieldid": field.id
+  }).click(function(event) {
+    removeFavoriteField((this).getAttribute("data-fieldid"))
+  }).appendTo(blockBDiv);
+
+  $("#favoritefields").append(newListItem);
+  $("#favoritefields").listview("refresh");	
+}
+
+/**
+ * Function that adds a new company to the list of 
+ * favorite companies in my career
+ */
+function addFavoriteCompany(company){
+  var newListItem = $("<li/>", {
+    id: 'fav' + company.id,
+    "data-companyid": company.id
+  });
+
+  var gridADiv = $("<div/>", {
+    class: "ui-grid-a"
+  }).appendTo(newListItem);
+
+  var blockADiv = $("<div/>", {
+    class: "ui-block-a",
+    html: company.company
+  }).click(function(event) {
+    // TODO: actually open company with correct ID
+    openCompany((this).getAttribute("data-companyid"));
+  }).appendTo(gridADiv);
+
+  var blockBDiv = $("<div/>", {
+    class: "ui-block-b right-aligning"
+  }).appendTo(gridADiv);
+
+  $("<img/>", {
+    class: "remove-icon",
+    src: "images/remove-icon.png",
+    alt: "Remove",
+    "data-companyid": company.id
+  }).click(function(event) {
+    removeFavoriteCompany((this).getAttribute("data-companyid"));
+  }).appendTo(blockBDiv);
+  
+  // add to listview
+  $("#favoritecompanies").append(newListItem);
+  $("#favoritecompanies").listview("refresh");
+}
+
+/**
+ * Function that adds a new work experience 
+ * to the experience tab in my career
+ */
+function addExperience(experience){
+  var newListItem = $("<li/>", {
+      "data-companyid": experience.id
+  });
+  
+  $("<div/>", {
+    html: experience.company
+  }).appendTo(newListItem);
+  $("<br/>").appendTo(newListItem);
+  $("<div/>", {
+    html: experience.startDate + "-" + experience.endDate
+  }).appendTo(newListItem);
+  $("<br/>").appendTo(newListItem);
+  $("<div/>", {
+    html: experience.position
+  }).appendTo(newListItem);
+
+  newListItem.click(function(event) {
+    openCompany((this).getAttribute("data-companyid"));
+  });
+
+  $("#experiencelist").append(newListItem);
+  $("#experiencelist").listview("refresh");
+}
+
 // Page load script ------------------------------------------------------------
 
 // MAIN PAGE LOAD
@@ -186,6 +292,26 @@ $('#career').live('pageinit', function(event) {
   $("#xpbutton").click(openXP);
   $("#favoritesbutton").click(openFavorites);
   $("#historybutton").click(openHistory);
+  $("#addfavfieldbutton").click(function(){
+    //TODO how should we deal with aberrant user input wrt finding ids?
+    var field = {"field": $("#addfavfield").val(), "id":"0"};
+    addFavoriteField(field);
+  });
+  $("#addfavcompanybutton").click(function(){
+    //TODO how should we deal with aberrant user input wrt finding ids?
+    var company = {"company": $("#addfavcompany").val(), "id":"0"};
+    addFavoriteCompany(company);
+  });
+  $("#addexperiencebutton").click(function(){
+    //TODO how should we deal with aberrant user input wrt finding ids?
+    //alert("msg");
+    var experience = {"company":$("#companyname").val(), 
+                      "startDate":$("#periodfrom").val(), 
+                      "endDate":$("#periodto").val(), 
+                      "position":$("#jobtitle").val(), 
+                      "id":"0"};
+    addExperience(experience);
+  });
 
   $(".homebutton").click(openMain);
 
@@ -221,8 +347,7 @@ $('#career').live('pageinit', function(event) {
     selector.selectmenu("refresh");
   });
 
-  // populate career page tabs
-  
+  /**Populate career page tabs*/  
   // 'experience' tab
   // TODO: get data for user FROM DATABASE
   var experienceList = [{"company":"Aunt Jemima's", "startDate":"06/2011", 
@@ -231,116 +356,26 @@ $('#career').live('pageinit', function(event) {
   			 "endDate":"08/2010", "position":"junior burger flipper", "id":"7"}];
 
   for(var i in experienceList){
-    var newListItem = $("<li/>", {
-      "data-companyid": experienceList[i].id
-    });
-    $("<div/>", {
-      html: experienceList[i].company
-    }).appendTo(newListItem);
-    $("<br/>").appendTo(newListItem);
-    $("<div/>", {
-      html: experienceList[i].startDate + "-" + experienceList[i].endDate
-    }).appendTo(newListItem);
-    $("<br/>").appendTo(newListItem);
-    $("<div/>", {
-      html: experienceList[i].position
-    }).appendTo(newListItem);
-
-    newListItem.click(function(event) {
-      openCompany((this).getAttribute("data-companyid"));
-    });
-  
-    $("#experiencelist").append(newListItem);
-  }
-  
-  $("#experiencelist").listview("refresh");					
+    addExperience(experienceList[i]);
+  }				
   
   // 'favorites' tab
   // TODO: get data for user FROM DATABASE
-
   var favoriteCompanies = [{"company":"Aunt Jemima's", "id":"3"},
   			   {"company":"McDonalds", "id":"7"},
   			   {"company":"Meals on Wheels", "id":"5068"}];
 
   for(var i in favoriteCompanies) {
-
-    var newListItem = $("<li/>", {
-      id: 'fav' + favoriteCompanies[i].id,
-      "data-companyid": favoriteCompanies[i].id
-    });
-
-    var gridADiv = $("<div/>", {
-      class: "ui-grid-a"
-    }).appendTo(newListItem);
-
-    var blockADiv = $("<div/>", {
-      class: "ui-block-a",
-      html: favoriteCompanies[i].company
-    }).click(function(event) {
-      // TODO: actually open company with correct ID
-      openCompany((this).getAttribute("data-companyid"));
-    }).appendTo(gridADiv);
-
-    var blockBDiv = $("<div/>", {
-      class: "ui-block-b right-aligning"
-    }).appendTo(gridADiv);
-
-    $("<img/>", {
-      class: "remove-icon",
-      src: "images/remove-icon.png",
-      alt: "Remove",
-      "data-companyid": favoriteCompanies[i].id
-    }).click(function(event) {
-      removeFavoriteCompany((this).getAttribute("data-companyid"));
-    }).appendTo(blockBDiv);
-    
-    // add to listview
-    $("#favoritecompanies").append(newListItem);
+    addFavoriteCompany(favoriteCompanies[i]);
   }  
-
-  // refresh listview
-  $("#favoritecompanies").listview("refresh");					
   
-
   // TODO: get data for user FROM DATABASE
   var favoriteFields = [{"field":"Food", "id":"3"},{"field":"Bunny Science", "id":"7"},{"field":"Lulz forevah", "id":"5068"}];
 
   for(var i in favoriteFields) {
-
-    var newListItem = $("<li/>", {
-      id: 'favfield' + favoriteFields[i].id
-    });
-
-    var gridADiv = $("<div/>", {
-      class: 'ui-grid-a'
-    }).appendTo(newListItem);
-
-    var blockADiv = $("<div/>", {
-      class: 'ui-block-a',
-      html: favoriteFields[i].field
-    }).click(function(event) {
-      // TODO: not really sure what, though. needs to be discussed
-    }).appendTo(gridADiv);
-
-    var blockBDiv = $("<div/>", {
-      class: 'ui-block-b right-aligning'
-    }).appendTo(gridADiv);
-
-    $("<img/>", {
-      class: 'remove-icon',
-      src: 'images/remove-icon.png',
-      alt: 'Remove',
-      "data-fieldid": favoriteFields[i].id
-    }).click(function(event) {
-      removeFavoriteField((this).getAttribute("data-fieldid"))
-    }).appendTo(blockBDiv);
-
-    $("#favoritefields").append(newListItem);
+    addFavoriteField(favoriteFields[i]);    
   }
-
-  $("#favoritefields").listview("refresh");					
   
-
   // position navigational elements
   var header = $("#careerheader");
   var footer = $("#footer");
