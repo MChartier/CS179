@@ -25,24 +25,24 @@
     <div class="careerpagecontent" id="infocontent">
       <form>
 	<div data-role="fieldcontain">
-	  <label for="name">Full name</label>
-	  <input type="text" name="name" id="name" value="" placeholder="Name"/>
+	  <label for="name" class="ui-hidden-accessible">Full name</label>
+	  <input type="text" name="name" id="name" value="" placeholder="Full name"/>
 	</div>
 	
 	<div data-role="fieldcontain">
-	  <label for="year">Year</label>
+	  <label for="year" class="ui-hidden-accessible">Year</label>
 	  <input type="number" name="year" id="year" value="" placeholder="Year"/>
 	</div>
 	
 	<div data-role="fieldcontain">
-	  <label for="concentration" class="select">Concentration</label>
+	  <label for="concentration" class="select ui-hidden-accessible">Concentration</label>
 	  <select name="concentration" id="concentration" data-native-menu="false">
-	    <option value="">Loading Concentrations...</option>
+	    <option value="">Select concentration</option>
 	  </select>
 	</div> 
 	
 	<div data-role="fieldcontain">
-	  <label for="gpa">GPA</label>
+	  <label for="gpa" class="ui-hidden-accessible">GPA</label>
 	  <input type="number" name="gpa" id="gpa" value="" placeholder="GPA"/>
 	</div>
 	
@@ -81,24 +81,23 @@
       <br/>
       <form id="addexperienceform">
         <div data-role="fieldcontain">
-          <label for="companyname">Company name</label>
-          <input type="text" name="companyname" id="companyname" value="" class="single-indent"/>
+          <label for="companyname" class="ui-hidden-accessible">Company name</label>
+          <input type="text" name="companyname" id="companyname" value="" placeholder="Company name"/>
         </div>
 	
-        Employment Period
-        <div data-role="fieldcontain" class="single-indent">
-          <label for="periodfrom">From</label>
-          <input type="date" name="periodfrom" id="periodfrom" value=""/>
+        <div data-role="fieldcontain">
+          <label for="periodfrom" class="ui-hidden-accessible">From</label>
+          <input type="date" name="periodfrom" id="periodfrom" value="" placeholder="Employed from"/>
         </div>
 	
-        <div data-role="fieldcontain" class="single-indent">
-          <label for="periodto">To</label>
-          <input type="date" name="periodto" id="periodto" value=""/>
+        <div data-role="fieldcontain">
+          <label for="periodto" class="ui-hidden-accessible">To</label>
+          <input type="date" name="periodto" id="periodto" value="" placeholder="Employed until"/>
         </div>
         
         <div data-role="fieldcontain">
-          <label for="jobtitle">Title</label>
-          <input type="text" name="jobtitle" id="jobtitle" value="" class="single-indent"/>
+          <label for="jobtitle" class="ui-hidden-accessible">Job title</label>
+          <input type="text" name="jobtitle" id="jobtitle" value="" placeholder="Job title"/>
         </div>     
       </form>
       
