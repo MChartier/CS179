@@ -33,6 +33,7 @@
 	bottom:5px;
 	height:47px;
 	width:47px;
+	z-index:1;
 }
 
 .bottom-right{
@@ -41,19 +42,22 @@
 	bottom:5px;
 	height:47px;
 	width:47px;
+	z-index:1;
 }
 
 /*career page styles*/
 
 .remove-icon{
-	height:20px;
-	width:20px;
+	height:25px;
+	width:25px;
+  padding:5px;
 }
 
 .add-icon{
-	height:20px;
-	width:20px;
-  padding:10px;
+	height:25px;
+	width:25px;
+  padding:5px;
+  float: right
 }
 
 
@@ -68,4 +72,8 @@
 
 .centering{
 	text-align:center;
+}
+
+.input-button-inline{
+  overflow: hidden; 
 }
