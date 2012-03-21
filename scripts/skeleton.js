@@ -228,11 +228,12 @@ $('#career').live('pageinit', function(event) {
   //experience tab
   //TODO get data for user FROM DATABASE
   experienceList = [{"company":"Aunt Jemima's", "startDate":"06/2011", "endDate":"08/2011", "position":"syrup intern", "id":"3"},{"company":"McDonalds", "startDate":"06/2010", "endDate":"08/2010", "position":"junior burger flipper", "id":"7"}];
-  for(i in experienceList){
+  for(var i in experienceList){
   	var newItem = $("<li><div>" + experienceList[i].company + "</div></br><div>" + experienceList[i].startDate + "-" + experienceList[i].endDate + "</div></br><div>" + experienceList[i].position + "</div></li>");
 		newItem.click(function() {
       //TODO actually open company with correct ID
-      openCompany(experienceList[i].id);
+      var index = i;
+      openCompany(experienceList[index].id);
 		});
     $("#experiencelist").append(newItem);
     $("#experiencelist").listview("refresh");						
@@ -241,11 +242,12 @@ $('#career').live('pageinit', function(event) {
   //favorites tab
   //TODO get data for user FROM DATABASE
   favoriteCompanies = [{"company":"Aunt Jemima's", "id":"3"},{"company":"McDonalds", "id":"7"},{"company":"Meals on Wheels", "id":"5068"}];
-  for(i in favoriteCompanies){
+  for(var i in favoriteCompanies){
   	var newItem = $("<li id='fav" + favoriteCompanies[i].id + "'><div class='ui-grid-a'><div class='ui-block-a'>" + favoriteCompanies[i].company + "</div><div class='ui-block-b'><div class='right-aligning'><img  onclick='removeFavoriteCompany(" + favoriteCompanies[i].id + ")' class='remove-icon' src='images/remove-icon.png' alt='Remove'/></div></div></div></li>");
 		newItem.click(function() {
       //TODO actually open company with correct ID
-        openCompany(favoriteCompanies[i].id);
+      var index = i;
+        openCompany(favoriteCompanies[index].id);
 		});
     $("#favoritecompanies").append(newItem);
     $("#favoritecompanies").listview("refresh");						
@@ -254,7 +256,7 @@ $('#career').live('pageinit', function(event) {
   
   //TODO get data for user FROM DATABASE
   favoriteFields = [{"field":"Food", "id":"3"},{"field":"Bunny Science", "id":"7"},{"field":"Lulz forevah", "id":"5068"}];
-  for(i in favoriteFields){
+  for(var i in favoriteFields){
   	var newItem = $("<li id='favfield" + favoriteFields[i].id + "'><div class='ui-grid-a'><div class='ui-block-a'>" + favoriteFields[i].field + "</div><div class='ui-block-b'><div class='right-aligning'><img  onclick='removeFavoriteField(" + favoriteFields[i].id + ")' class='remove-icon' src='images/remove-icon.png' alt='Remove'/></div></div></div></li>");
 		newItem.click(function() {
       //TODO not really sure what, though. needs to be discussed
