@@ -77,8 +77,8 @@
     <div class="careerpagecontent" id="XPcontent">
       <h3>Work Experience</h3>
       <ul id="experiencelist" data-role="listview" ></ul>
-      
-      <form>
+      <br/>
+      <form id="addexperienceform">
         <div data-role="fieldcontain">
           <label for="companyname">Company name</label>
           <input type="text" name="companyname" id="companyname" value="" class="single-indent"/>
@@ -100,7 +100,9 @@
           <input type="text" name="jobtitle" id="jobtitle" value="" class="single-indent"/>
         </div>     
       </form>
-      <div class="centering"><input id="addexperiencebutton" type="submit" value="Add another position" data-icon="add" data-inline="true"/></div>
+      
+      <div id="showaddexpformcontainer" class="centering"><input id="showaddexpform" type="submit" value="Add another position" data-icon="add" data-inline="true"/></div>
+      <div id="addexperiencebuttoncontainer" class="centering"><input id="addexperiencebutton" type="submit" value="Add" data-icon="add" data-inline="true"/></div>
       <div class="centering"><input type="submit" value="Save" data-icon="check" data-inline="true"/></div>
       
     </div> <!-- /XP tab -->
@@ -138,7 +140,10 @@
 
     <!-- 'History' tab -->
     <div class="careerpagecontent" id="historycontent">
-      History stuff.
+      <h3>Recent activity</h3>
+      
+      <ul id="historylist" data-role="listview"></ul>
+      
     </div>
   </div> <!-- /content -->
 

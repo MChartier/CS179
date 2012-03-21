@@ -60,6 +60,12 @@
   float: right
 }
 
+.activity-time{
+  float:left;
+  max-width:50px;
+  padding-right:5px;
+}
+
 
 /*general alignment*/
 .single-indent{

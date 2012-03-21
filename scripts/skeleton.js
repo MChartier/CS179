@@ -229,6 +229,26 @@ function addExperience(experience){
   $("#experiencelist").listview("refresh");
 }
 
+function addHistoryItem(historyItem){
+  var newListItem = $("<li/>");
+  
+   $("<div/>", {
+    class: "activity-time",
+    html: historyItem.timestamp
+  }).appendTo(newListItem);
+  
+  var containerDiv = $("<div/>", {
+    class: "input-button-inline"
+  }).appendTo(newListItem);
+  
+  $("<div/>", {
+    html: historyItem.activity
+  }).appendTo(containerDiv);
+  
+  $("#historylist").append(newListItem);
+  $("#historylist").listview("refresh");
+}
+
 // Page load script ------------------------------------------------------------
 
 // MAIN PAGE LOAD
@@ -287,6 +307,10 @@ $('#main').live('pageinit', function(event) {
 $('#career').live('pageinit', function(event) {
   openCareerInfo();
 
+  //hide a couple of the form elements initially
+  $("#addexperienceform").hide();
+  $("#addexperiencebuttoncontainer").hide();  
+  
   // set up event handlers
   $("#infobutton").click(openCareerInfo);
   $("#xpbutton").click(openXP);
@@ -311,8 +335,16 @@ $('#career').live('pageinit', function(event) {
                       "position":$("#jobtitle").val(), 
                       "id":"0"};
     addExperience(experience);
+    
+    $("#addexperienceform").hide();
+    $("#addexperiencebuttoncontainer").hide();
+    $("#showaddexpformcontainer").show();
   });
-
+  $("#showaddexpform").click(function(){
+    $("#addexperienceform").show();
+    $("#addexperiencebuttoncontainer").show();
+    $("#showaddexpformcontainer").hide();
+  });
   $(".homebutton").click(openMain);
 
   // asynchronously load concentrations list
@@ -374,6 +406,18 @@ $('#career').live('pageinit', function(event) {
 
   for(var i in favoriteFields) {
     addFavoriteField(favoriteFields[i]);    
+  }
+  
+  //TODO: get data for user FROM DATABASE
+  //currently expects list to be sorted in the order of most recent->less recent
+  var historyItems = [{"activity":"Decided to take a job at Burger King", "timestamp":"5/9"},                      
+                      {"activity":"Bought ice cream and wept late into the night", "timestamp":"5/8"},
+                      {"activity":"Failed to obtain the job", "timestamp":"5/8"},
+                      {"activity":"Looked up a job at McDonalds", "timestamp":"5/6"}                 
+                      ];
+  
+  for(var i in historyItems) {
+    addHistoryItem(historyItems[i]);    
   }
   
   // position navigational elements
