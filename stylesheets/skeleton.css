@@ -33,6 +33,7 @@
 	bottom:5px;
 	height:47px;
 	width:47px;
+	z-index:1;
 }
 
 .bottom-right{
@@ -41,6 +42,7 @@
 	bottom:5px;
 	height:47px;
 	width:47px;
+	z-index:1;
 }
 
 /*career page styles*/
