@@ -256,6 +256,7 @@ $('#career').live('pageinit', function(event) {
   
   $("#experiencelist").listview("refresh");						
 
+
   
   // 'favorites' tab
   // TODO: get data for user FROM DATABASE
@@ -279,8 +280,10 @@ $('#career').live('pageinit', function(event) {
   //TODO get data for user FROM DATABASE
   favoriteFields = [{"field":"Food", "id":"3"},{"field":"Bunny Science", "id":"7"},{"field":"Lulz forevah", "id":"5068"}];
   for(var i in favoriteFields){
+
     var newItem = $("<li id='favfield" + favoriteFields[i].id + "'><div class='ui-grid-a'><div class='ui-block-a'>" + favoriteFields[i].field + "</div><div class='ui-block-b'><div class='right-aligning'><img  onclick='removeFavoriteField(" + favoriteFields[i].id + ")' class='remove-icon' src='images/remove-icon.png' alt='Remove'/></div></div></div></li>");
     newItem.click(function() {
+
       //TODO not really sure what, though. needs to be discussed
     });
 
