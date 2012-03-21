@@ -1,4 +1,4 @@
-// Main page -------------------------------------------------------------------
+// Main page -----------------------------------------------------------------
 
 function openSearch() {
   hideHelp();
@@ -45,9 +45,10 @@ function openMain() {
 
   // don't highlight the home button as active!
   $(".homebutton").removeClass("ui-btn-active");
+  $(".backbutton").removeClass("ui-btn-active");
 }
 
-// Career page -----------------------------------------------------------------
+// Career page ---------------------------------------------------------------
 
 function openCareerInfo() {
   $(".careerpagecontent").hide();
@@ -69,7 +70,7 @@ function openHistory() {
   $("#historycontent").show();
 }
 
-// Company pages ---------------------------------------------------------------
+// Company pages -------------------------------------------------------------
 
 // 'opening' a company means creating a page for said company in the DOM
 // and then navigating to it
@@ -123,7 +124,7 @@ function removeFavoriteField(id){
 	$("#favoritefields").listview("refresh");
 }
 
-// Page load script ------------------------------------------------------------
+// Page load script ----------------------------------------------------------
 
 // MAIN PAGE LOAD
 $('#main').live('pageinit', function(event) {
@@ -300,7 +301,6 @@ $('#career').live('pageinit', function(event) {
 
   // refresh listview
   $("#favoritecompanies").listview("refresh");					
-  
 
   // TODO: get data for user FROM DATABASE
   var favoriteFields = [{"field":"Food", "id":"3"},{"field":"Bunny Science", "id":"7"},{"field":"Lulz forevah", "id":"5068"}];
@@ -339,8 +339,6 @@ $('#career').live('pageinit', function(event) {
   }
 
   $("#favoritefields").listview("refresh");					
-  
-
   // position navigational elements
   var header = $("#careerheader");
   var footer = $("#footer");
