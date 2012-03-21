@@ -119,7 +119,6 @@ function removeFavoriteCompany(id){
 
 function removeFavoriteField(id){
   //TODO remove favorite from database!!!
-
   $("li#favfield"  + id).remove();
 	$("#favoritefields").listview("refresh");
 }
@@ -227,9 +226,9 @@ $('#career').live('pageinit', function(event) {
   // 'experience' tab
   // TODO: get data for user FROM DATABASE
   var experienceList = [{"company":"Aunt Jemima's", "startDate":"06/2011", 
-			 "endDate":"08/2011", "position":"syrup intern", "id":"3"},
-			{"company":"McDonalds", "startDate":"06/2010", 
-			 "endDate":"08/2010", "position":"junior burger flipper", "id":"7"}];
+  			 "endDate":"08/2011", "position":"syrup intern", "id":"3"},
+  			{"company":"McDonalds", "startDate":"06/2010", 
+  			 "endDate":"08/2010", "position":"junior burger flipper", "id":"7"}];
 
   for(var i in experienceList){
     var newListItem = $("<li/>", {
@@ -254,9 +253,7 @@ $('#career').live('pageinit', function(event) {
     $("#experiencelist").append(newListItem);
   }
   
-  $("#experiencelist").listview("refresh");						
-
-
+  $("#experiencelist").listview("refresh");					
   
   // 'favorites' tab
   // TODO: get data for user FROM DATABASE
@@ -267,29 +264,82 @@ $('#career').live('pageinit', function(event) {
 
   for(var i in favoriteCompanies) {
 
-    var newItem = $("<li id='fav" + favoriteCompanies[i].id + "' + data-companyid='" + favoriteCompanies[i].id + "'><div class='ui-grid-a'><div class='ui-block-a'>" + favoriteCompanies[i].company + "</div><div class='ui-block-b'><div class='right-aligning'><img  onclick='removeFavoriteCompany(" + favoriteCompanies[i].id + ")' class='remove-icon' src='images/remove-icon.png' alt='Remove'/></div></div></div></li>");
-
-    newItem.click(function(event) {
-      //TODO actually open company with correct ID
-      openCompany((this).getAttribute("data-companyid"));
+    var newListItem = $("<li/>", {
+      id: 'fav' + favoriteCompanies[i].id,
+      "data-companyid": favoriteCompanies[i].id
     });
-    $("#favoritecompanies").append(newItem);
-    $("#favoritecompanies").listview("refresh");						
+
+    var gridADiv = $("<div/>", {
+      class: "ui-grid-a"
+    }).appendTo(newListItem);
+
+    var blockADiv = $("<div/>", {
+      class: "ui-block-a",
+      html: favoriteCompanies[i].company
+    }).click(function(event) {
+      // TODO: actually open company with correct ID
+      openCompany((this).getAttribute("data-companyid"));
+    }).appendTo(gridADiv);
+
+    var blockBDiv = $("<div/>", {
+      class: "ui-block-b right-aligning"
+    }).appendTo(gridADiv);
+
+    $("<img/>", {
+      class: "remove-icon",
+      src: "images/remove-icon.png",
+      alt: "Remove",
+      "data-companyid": favoriteCompanies[i].id
+    }).click(function(event) {
+      removeFavoriteCompany((this).getAttribute("data-companyid"));
+    }).appendTo(blockBDiv);
+    
+    // add to listview
+    $("#favoritecompanies").append(newListItem);
   }  
 
-  //TODO get data for user FROM DATABASE
-  favoriteFields = [{"field":"Food", "id":"3"},{"field":"Bunny Science", "id":"7"},{"field":"Lulz forevah", "id":"5068"}];
-  for(var i in favoriteFields){
+  // refresh listview
+  $("#favoritecompanies").listview("refresh");					
+  
 
-    var newItem = $("<li id='favfield" + favoriteFields[i].id + "'><div class='ui-grid-a'><div class='ui-block-a'>" + favoriteFields[i].field + "</div><div class='ui-block-b'><div class='right-aligning'><img  onclick='removeFavoriteField(" + favoriteFields[i].id + ")' class='remove-icon' src='images/remove-icon.png' alt='Remove'/></div></div></div></li>");
-    newItem.click(function() {
+  // TODO: get data for user FROM DATABASE
+  var favoriteFields = [{"field":"Food", "id":"3"},{"field":"Bunny Science", "id":"7"},{"field":"Lulz forevah", "id":"5068"}];
 
-      //TODO not really sure what, though. needs to be discussed
+  for(var i in favoriteFields) {
+
+    var newListItem = $("<li/>", {
+      id: 'favfield' + favoriteFields[i].id
     });
 
-    $("#favoritefields").append(newItem);
-    $("#favoritefields").listview("refresh");						
+    var gridADiv = $("<div/>", {
+      class: 'ui-grid-a'
+    }).appendTo(newListItem);
+
+    var blockADiv = $("<div/>", {
+      class: 'ui-block-a',
+      html: favoriteFields[i].field
+    }).click(function(event) {
+      // TODO: not really sure what, though. needs to be discussed
+    }).appendTo(gridADiv);
+
+    var blockBDiv = $("<div/>", {
+      class: 'ui-block-b right-aligning'
+    }).appendTo(gridADiv);
+
+    $("<img/>", {
+      class: 'remove-icon',
+      src: 'images/remove-icon.png',
+      alt: 'Remove',
+      "data-fieldid": favoriteFields[i].id
+    }).click(function(event) {
+      removeFavoriteField((this).getAttribute("data-fieldid"))
+    }).appendTo(blockBDiv);
+
+    $("#favoritefields").append(newListItem);
   }
+
+  $("#favoritefields").listview("refresh");					
+  
 
   // position navigational elements
   var header = $("#careerheader");
